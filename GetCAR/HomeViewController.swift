@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.rowHeight = 250
+        tableView.rowHeight = 220
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -45,7 +45,6 @@ class HomeViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
     }
     
 }

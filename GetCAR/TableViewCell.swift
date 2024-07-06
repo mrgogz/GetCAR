@@ -30,13 +30,29 @@ class TableViewCell: UITableViewCell {
     }
     
     func configureImageView() {
-        contentView.addSubview(carImageView)
-        translatesAutoresizingMaskIntoConstraints = false
+        addSubview(carImageView)
+        carImageView.translatesAutoresizingMaskIntoConstraints = false
+        carImageView.clipsToBounds = true
+        carImageView.contentMode = .scaleAspectFill
+        carImageView.layer.cornerRadius = 10
         
         NSLayoutConstraint.activate([
-            carImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            carImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            carImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            carImageView.topAnchor.constraint(equalTo: topAnchor),
+            carImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            carImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            carImageView.heightAnchor.constraint(equalToConstant: 250)
+        ])
+    }
+    
+    func configureBrandLabel() {
+        addSubview(brandLabel)
+        brandLabel.translatesAutoresizingMaskIntoConstraints = false
+        brandLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        brandLabel.numberOfLines = 1
+        brandLabel.lineBreakMode = .byWordWrapping
+        
+        NSLayoutConstraint.activate([
+            
         ])
     }
     
