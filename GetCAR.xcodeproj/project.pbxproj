@@ -13,7 +13,8 @@
 		B183F0272C3832ED000DC39B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B183F0262C3832ED000DC39B /* Assets.xcassets */; };
 		B183F0322C383DBF000DC39B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183F0312C383DBF000DC39B /* FavoritesViewController.swift */; };
 		B183F0342C383EEF000DC39B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183F0332C383EEF000DC39B /* MainTabBarViewController.swift */; };
-		B183F0362C384844000DC39B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183F0352C384844000DC39B /* TableViewCell.swift */; };
+		B183F0382C398FBE000DC39B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183F0372C398FBE000DC39B /* CollectionViewCell.swift */; };
+		B183F03A2C3C0AFB000DC39B /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183F0392C3C0AFB000DC39B /* CarDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		B183F02B2C3832ED000DC39B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B183F0312C383DBF000DC39B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		B183F0332C383EEF000DC39B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		B183F0352C384844000DC39B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		B183F0372C398FBE000DC39B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B183F0392C3C0AFB000DC39B /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,8 @@
 				B183F0312C383DBF000DC39B /* FavoritesViewController.swift */,
 				B183F0212C3832E9000DC39B /* HomeViewController.swift */,
 				B183F0332C383EEF000DC39B /* MainTabBarViewController.swift */,
-				B183F0352C384844000DC39B /* TableViewCell.swift */,
+				B183F0372C398FBE000DC39B /* CollectionViewCell.swift */,
+				B183F0392C3C0AFB000DC39B /* CarDetailViewController.swift */,
 			);
 			path = GetCAR;
 			sourceTree = "<group>";
@@ -141,9 +144,10 @@
 			files = (
 				B183F0342C383EEF000DC39B /* MainTabBarViewController.swift in Sources */,
 				B183F0222C3832E9000DC39B /* HomeViewController.swift in Sources */,
+				B183F0382C398FBE000DC39B /* CollectionViewCell.swift in Sources */,
 				B183F01E2C3832E9000DC39B /* AppDelegate.swift in Sources */,
-				B183F0362C384844000DC39B /* TableViewCell.swift in Sources */,
 				B183F0322C383DBF000DC39B /* FavoritesViewController.swift in Sources */,
+				B183F03A2C3C0AFB000DC39B /* CarDetailViewController.swift in Sources */,
 				B183F0202C3832E9000DC39B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

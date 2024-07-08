@@ -1,24 +1,28 @@
 //
-//  TableViewCell.swift
+//  CollectionViewCell.swift
 //  GetCAR
 //
-//  Created by Oğuzcan Beşerikli on 5.07.2024.
+//  Created by Oğuzcan Beşerikli on 6.07.2024.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class CollectionViewCell: UICollectionViewCell {
     
     let carImageView = UIImageView()
     let brandLabel = UILabel()
     let modelLabel = UILabel()
     let priceLabel = UILabel()
     
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         backgroundColor = .systemBackground
         configureImageView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func configure(car: Car) {
@@ -40,7 +44,7 @@ class TableViewCell: UITableViewCell {
             carImageView.topAnchor.constraint(equalTo: topAnchor),
             carImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             carImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            carImageView.heightAnchor.constraint(equalToConstant: 250)
+            carImageView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
     
@@ -49,15 +53,10 @@ class TableViewCell: UITableViewCell {
         brandLabel.translatesAutoresizingMaskIntoConstraints = false
         brandLabel.font = UIFont.boldSystemFont(ofSize: 16)
         brandLabel.numberOfLines = 1
-        brandLabel.lineBreakMode = .byWordWrapping
+        brandLabel.lineBreakMode = .byTruncatingTail
         
         NSLayoutConstraint.activate([
             
         ])
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
 }
