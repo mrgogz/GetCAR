@@ -7,16 +7,6 @@
 
 import UIKit
 
-struct Car {
-    let brand: String
-    let model: String
-    let year: String
-    let price: String
-    let image: String
-    let detailPageImage: String
-    let engineType: String
-    let seatCap: String
-}
 
 class HomeViewController: UIViewController {
     
@@ -36,6 +26,8 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .white
         configureCollectionView()
     }
+    
+    
     
     func configureCollectionView() {
         
@@ -75,6 +67,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width / 2 - 20, height: 200)
+        return CGSize(width: view.frame.width / 2 - 20, height: 250)
     }
 }

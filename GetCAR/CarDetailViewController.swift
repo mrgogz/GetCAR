@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct Favorite{
-    let brand: String
-    let model: String
-    let detailPageImage: String
-}
 
 class CarDetailViewController: UIViewController {
     
@@ -27,10 +22,11 @@ class CarDetailViewController: UIViewController {
     private let transmissionSymbolImageView = UIImageView()
     private let seatSymbolImageView = UIImageView()
     
-    private var car: Car?
-    var favorites: [Favorite] = []
+    private var car: Car!
+    
     
     func configure(car: Car) {
+        self.car = car
         carImageView.image = UIImage(named: car.detailPageImage)
         combinedLabel.text = "\(car.brand) \(car.model)"
         priceLabel.text = car.price
@@ -43,7 +39,16 @@ class CarDetailViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         self.navigationController?.navigationBar.tintColor = .black
-        configureNavigationBar()
+        var favoriteCars = PersistentManager.shared.readData()
+        if favoriteCars.contains (where: { car in
+            self.car == car
+        }){
+            configureRemoveFavoritesButton()
+        }
+        else {
+            configureAddFavoritesButton()
+        }
+        
         configureImageView()
         configureCombinedLabel()
         configureYearLabel()
@@ -54,12 +59,31 @@ class CarDetailViewController: UIViewController {
         configureSeatCapLabel()
     }
     
-    func configureNavigationBar() {
+    
+    func configureAddFavoritesButton() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(addFavorite))
+        
+    }
+    
+    func configureRemoveFavoritesButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(removeFavorite))
+        
     }
     
     @objc func addFavorite() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(addFavorite))
+        var favoriteCars = PersistentManager.shared.readData()
+        favoriteCars.append(car)
+        PersistentManager.shared.saveData(data: favoriteCars)
+        configureRemoveFavoritesButton()
+    }
+    
+    @objc func removeFavorite() {
+        var favoriteCars = PersistentManager.shared.readData()
+        favoriteCars.removeAll { car in
+            self.car == car
+        }
+        PersistentManager.shared.saveData(data: favoriteCars)
+        configureAddFavoritesButton()
     }
     
     func configureImageView() {
@@ -67,7 +91,7 @@ class CarDetailViewController: UIViewController {
         carImageView.translatesAutoresizingMaskIntoConstraints = false
         carImageView.clipsToBounds = true
         carImageView.contentMode = .scaleAspectFill
-        carImageView.layer.cornerRadius = 10
+        carImageView.layer.cornerRadius = 35
         
         NSLayoutConstraint.activate([
             carImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -175,5 +199,6 @@ class CarDetailViewController: UIViewController {
         ])
     }
 }
+
 
 

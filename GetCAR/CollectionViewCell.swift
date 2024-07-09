@@ -13,12 +13,14 @@ class CollectionViewCell: UICollectionViewCell {
     let brandLabel = UILabel()
     let modelLabel = UILabel()
     let priceLabel = UILabel()
+    let combinedLabel = UILabel()
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .systemBackground
         configureImageView()
+        configureCombinedLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -27,10 +29,8 @@ class CollectionViewCell: UICollectionViewCell {
     
     func configure(car: Car) {
         carImageView.image = UIImage(named: car.image)
-        brandLabel.text = car.brand
-        modelLabel.text = car.model
+        combinedLabel.text = "\(car.brand) \(car.model)"
         priceLabel.text = car.price
-        
     }
     
     func configureImageView() {
@@ -48,15 +48,17 @@ class CollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func configureBrandLabel() {
-        addSubview(brandLabel)
-        brandLabel.translatesAutoresizingMaskIntoConstraints = false
-        brandLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        brandLabel.numberOfLines = 1
-        brandLabel.lineBreakMode = .byTruncatingTail
+    func configureCombinedLabel() {
+        addSubview(combinedLabel)
+        combinedLabel.translatesAutoresizingMaskIntoConstraints = false
+        combinedLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        combinedLabel.numberOfLines = 1
+        combinedLabel.lineBreakMode = .byTruncatingTail
         
         NSLayoutConstraint.activate([
-            
+            combinedLabel.topAnchor.constraint(equalTo: carImageView.bottomAnchor),
+            combinedLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            combinedLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 }

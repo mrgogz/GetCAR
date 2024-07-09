@@ -15,6 +15,7 @@
 		B183F0342C383EEF000DC39B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183F0332C383EEF000DC39B /* MainTabBarViewController.swift */; };
 		B183F0382C398FBE000DC39B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183F0372C398FBE000DC39B /* CollectionViewCell.swift */; };
 		B183F03A2C3C0AFB000DC39B /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183F0392C3C0AFB000DC39B /* CarDetailViewController.swift */; };
+		B183F03E2C3D7C00000DC39B /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = B183F03D2C3D7C00000DC39B /* Car.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B183F0332C383EEF000DC39B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		B183F0372C398FBE000DC39B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B183F0392C3C0AFB000DC39B /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
+		B183F03D2C3D7C00000DC39B /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				B183F0332C383EEF000DC39B /* MainTabBarViewController.swift */,
 				B183F0372C398FBE000DC39B /* CollectionViewCell.swift */,
 				B183F0392C3C0AFB000DC39B /* CarDetailViewController.swift */,
+				B183F03D2C3D7C00000DC39B /* Car.swift */,
 			);
 			path = GetCAR;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				B183F0342C383EEF000DC39B /* MainTabBarViewController.swift in Sources */,
 				B183F0222C3832E9000DC39B /* HomeViewController.swift in Sources */,
+				B183F03E2C3D7C00000DC39B /* Car.swift in Sources */,
 				B183F0382C398FBE000DC39B /* CollectionViewCell.swift in Sources */,
 				B183F01E2C3832E9000DC39B /* AppDelegate.swift in Sources */,
 				B183F0322C383DBF000DC39B /* FavoritesViewController.swift in Sources */,
