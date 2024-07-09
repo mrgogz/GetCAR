@@ -24,7 +24,6 @@ class CarDetailViewController: UIViewController {
     
     private var car: Car!
     
-    
     func configure(car: Car) {
         self.car = car
         carImageView.image = UIImage(named: car.detailPageImage)
@@ -39,16 +38,7 @@ class CarDetailViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         self.navigationController?.navigationBar.tintColor = .black
-        var favoriteCars = PersistentManager.shared.readData()
-        if favoriteCars.contains (where: { car in
-            self.car == car
-        }){
-            configureRemoveFavoritesButton()
-        }
-        else {
-            configureAddFavoritesButton()
-        }
-        
+        checkData()
         configureImageView()
         configureCombinedLabel()
         configureYearLabel()
@@ -59,15 +49,24 @@ class CarDetailViewController: UIViewController {
         configureSeatCapLabel()
     }
     
+    func checkData() {
+        var favoriteCars = PersistentManager.shared.readData()
+        if favoriteCars.contains (where: { car in
+            self.car == car
+        }){
+            configureRemoveFavoritesButton()
+        }
+        else {
+            configureAddFavoritesButton()
+        }
+    }
     
     func configureAddFavoritesButton() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(addFavorite))
-        
     }
     
     func configureRemoveFavoritesButton() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(removeFavorite))
-        
     }
     
     @objc func addFavorite() {

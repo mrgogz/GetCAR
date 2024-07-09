@@ -9,15 +9,14 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
-    
     var collectionView: UICollectionView!
     var favoriteCars: [Car] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = "Favorites"
         configureCollectionView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,11 +41,9 @@ class FavoritesViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    
 }
 
 extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

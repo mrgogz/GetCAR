@@ -8,7 +8,6 @@
 import UIKit
 
 class MainTabBarViewController: UITabBarController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +21,6 @@ class MainTabBarViewController: UITabBarController {
         vc1.title = "Home"
         
         setViewControllers([vc1, vc2], animated: true)
-        
         tabBar.tintColor = .black
         
     }
